@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuentes Claras III | Activa Inmobiliaria 360</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#2b6cb0', // Tu azul corporativo
+                            dark: '#1e293b', // Gris pizarra oscuro
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- NAV BAR -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5 bg-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- LOGO -->
+            <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0, 0)">
+                <!-- CAMBIAR IMAGEN: Logo Blanco para fondo transparente / Logo Oscuro para fondo blanco al hacer scroll -->
+                <img id="nav-logo" src="https://via.placeholder.com/200x60/transparent/FFFFFF?text=ACTIVA+360" alt="ACTIVA 360 Logo" class="h-10 md:h-12 w-auto object-contain transition-all">
+            </div>
+            
+            <div class="flex items-center gap-6">
+                <button onclick="document.getElementById('beneficios').scrollIntoView()" class="hidden md:block font-semibold hover:text-brand-blue transition-colors text-white/90" id="nav-link">
+                    La Promoción
+                </button>
+                <!-- BOTÓN LLAMAR: Enlace directo tel: -->
+                <a href="tel:695717864" class="bg-brand-blue text-white px-5 py-2.5 rounded-full font-bold flex items-center gap-2 hover:bg-blue-700 transition-all shadow-lg hover:scale-105 transform">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="hidden sm:inline">Llamar Ahora</span>
+                    <span class="sm:hidden">Llamar</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- CAMBIAR IMAGEN: Render exterior de alta calidad, preferiblemente atardecer -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Fachada Fuentes Claras III" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center text-white mt-16">
+            <span class="uppercase tracking-widest text-sm font-bold bg-brand-blue/90 px-3 py-1 rounded mb-6 inline-block backdrop-blur-sm">
+                Cubas de la Sagra (Madrid)
+            </span>
+            <h1 class="font-heading font-extrabold text-4xl md:text-5xl lg:text-7xl leading-tight mb-6 max-w-4xl mx-auto drop-shadow-lg">
+                No compres una casa.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">
+                    Estrena tu futuro energético.
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Aerotermia de última generación, piscina privada y autoconsumo real. 
+                Diseñadas para quienes buscan independencia y confort absoluto.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto">
+                    VER DISPONIBILIDAD
+                </button>
+                <button onclick="document.getElementById('beneficios').scrollIntoView({behavior: 'smooth'})" class="text-white border-2 border-white/30 hover:border-white px-8 py-4 rounded-full font-semibold transition-all backdrop-blur-sm hover:bg-white/10 w-full sm:w-auto">
+                    Descubrir más
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/70 hidden md:block">
+            <i class="fa-solid fa-arrow-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">
+                    Tecnología al servicio de tu ahorro
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                    Hemos optimizado cada detalle constructivo para minimizar el consumo y maximizar el confort.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-blue hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="text-brand-blue mb-4 text-4xl transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-dark">Placas Solares 5kW</h3>
+                    <p class="text-gray-600 leading-relaxed">Instalación fotovoltaica de alto rendimiento incluida. Genera tu propia energía y olvídate de la factura.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-blue hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="text-brand-blue mb-4 text-4xl transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-temperature-arrow-down"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-dark">Suelo Radiante</h3>
+                    <p class="text-gray-600 leading-relaxed">Climatización invisible (frío/calor) mediante aerotermia. Calor uniforme en invierno y frescor en verano.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-blue hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="text-brand-blue mb-4 text-4xl transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-fan"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-dark">Aerotermia</h3>
+                    <p class="text-gray-600 leading-relaxed">Sistema de alta eficiencia energética para agua caliente y climatización. La tecnología más limpia.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-brand-blue hover:shadow-xl transition-all hover:-translate-y-1 group">
+                    <div class="text-brand-blue mb-4 text-4xl transform group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl mb-3 text-brand-dark">Ahorro 90%</h3>
+                    <p class="text-gray-600 leading-relaxed">Gracias a la calificación A y el autoconsumo, reducirás tus gastos fijos drásticamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIFESTYLE -->
+    <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                
+                <div class="lg:w-1/2 relative">
+                    <!-- CAMBIAR IMAGEN: Foto de familia en jardín/piscina, mostrando piscina de 6x3m -->
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Familia en piscina privada" class="w-full h-full object-cover transform hover:scale-105 transition-duration-700 transition-transform">
+                        <div class="absolute bottom-0 left-0 bg-brand-blue/90 text-white p-6 rounded-tr-3xl">
+                            <p class="font-heading font-bold text-2xl">Piscina 6x3m</p>
+                            <p class="text-sm opacity-90">Privada y terminada</p>
+                        </div>
+                    </div>
+                    <!-- Decorative pattern -->
+                    <div class="absolute -z-10 top-10 -left-10 w-full h-full border-2 border-brand-blue/20 rounded-3xl"></div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <h2 class="font-heading font-extrabold text-3xl md:text-5xl text-brand-dark mb-6 leading-tight">
+                        300m² de <br>
+                        <span class="text-brand-blue">pura libertad</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        En Fuentes Claras III, el espacio no es un lujo, es el estándar. Parcelas diseñadas para la privacidad, casas construidas con <strong>hormigón H30</strong> de máxima resistencia y acabados para toda la vida.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
+                            <span class="font-medium text-gray-700">Parcelas desde 300m² totalmente valladas</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
+                            <span class="font-medium text-gray-700">Piscina privada incluida</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
+                            <span class="font-medium text-gray-700">Porche trasero solado y zona chill-out</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brand-blue text-xl"></i>
+                            <span class="font-medium text-gray-700">Cocina americana Open Concept</span>
+                        </li>
+                    </ul>
+
+                    <button onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})" class="bg-brand-dark text-white px-8 py-3 rounded-lg font-bold hover:bg-gray-800 transition-colors shadow-lg">
+                        Quiero ver los planos
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTÍA -->
+    <section class="bg-brand-dark py-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="inline-block p-4 bg-brand-blue/20 rounded-full mb-6 ring-1 ring-brand-blue/50">
+                <i class="fa-solid fa-shield-halved text-brand-blue text-4xl"></i>
+            </div>
+            
+            <h2 class="font-heading font-bold text-3xl md:text-4xl text-white mb-6">
+                Tranquilidad garantizada por contrato
+            </h2>
+            
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-8">
+                Somos la <span class="text-white font-bold border-b-2 border-brand-blue">única promoción</span> que te ofrece 
+                <strong class="text-white text-2xl mx-2">5 AÑOS</strong> 
+                de garantía total post-entrega.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-2xl mx-auto">
+                <p class="text-gray-200 text-sm">
+                    Mientras otros solo cumplen la ley, nosotros confiamos tanto en nuestra calidad constructiva que extendemos la protección para que solo te preocupes de disfrutar.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGOS / TIMELINE -->
+    <section class="py-24 bg-gray-50" id="pagos">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">
+                    Plan de Pagos Transparente
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+                    Estructura financiera clara hasta la entrega en el 1er Trimestre de 2027.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- Main Card -->
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                    
+                    <!-- Header Precio -->
+                    <div class="bg-brand-dark text-white p-8 md:p-10 text-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 bg-brand-blue/20 rounded-full blur-3xl"></div>
+                        <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl"></div>
+                        
+                        <div class="relative z-10">
+                            <p class="text-blue-300 font-bold tracking-widest uppercase text-xs md:text-sm mb-3">Precio Total de Venta</p>
+                            <div class="font-heading font-extrabold text-4xl md:text-6xl text-white mb-2">
+                                425.000,00 <span class="text-2xl md:text-4xl">€</span>
+                            </div>
+                            <p class="text-gray-400 text-sm font-medium">+ 10% IVA</p>
+                        </div>
+                    </div>
+
+                    <!-- Steps -->
+                    <div class="p-6 md:p-10 bg-white">
+                        <div class="space-y-4">
+                            
+                            <!-- Reserva -->
+                            <div class="flex flex-col md:flex-row justify-between items-center p-5 rounded-2xl bg-gray-50 border border-gray-100 group hover:border-brand-blue/30 transition-all">
+                                <div class="flex items-center gap-5 w-full md:w-auto mb-3 md:mb-0">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-brand-blue group-hover:text-white transition-colors">10%</div>
+                                    <div class="text-left">
+                                        <h4 className="font-bold text-brand-dark text-lg">Reserva</h4>
+                                        <p class="text-sm text-gray-500">Bloqueo de la unidad</p>
+                                    </div>
+                                </div>
+                                <div class="font-heading font-bold text-2xl text-gray-800">
+                                    42.500,00 € <span class="text-sm text-gray-400 font-normal">+ 10% IVA</span>
+                                </div>
+                            </div>
+
+                            <!-- Arras -->
+                            <div class="flex flex-col md:flex-row justify-between items-center p-5 rounded-2xl bg-gray-50 border border-gray-100 group hover:border-brand-blue/30 transition-all">
+                                <div class="flex items-center gap-5 w-full md:w-auto mb-3 md:mb-0">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-brand-blue group-hover:text-white transition-colors">20%</div>
+                                    <div class="text-left">
+                                        <h4 className="font-bold text-brand-dark text-lg">Contrato de Arras</h4>
+                                        <p class="text-sm text-gray-500">A la firma del contrato</p>
+                                    </div>
+                                </div>
+                                <div class="font-heading font-bold text-2xl text-gray-800">
+                                    85.000,00 € <span class="text-sm text-gray-400 font-normal">+ 10% IVA</span>
+                                </div>
+                            </div>
+
+                            <!-- Inicio Obra -->
+                            <div class="flex flex-col md:flex-row justify-between items-center p-5 rounded-2xl bg-gray-50 border border-gray-100 group hover:border-brand-blue/30 transition-all">
+                                <div class="flex items-center gap-5 w-full md:w-auto mb-3 md:mb-0">
+                                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center font-bold text-lg shadow-sm group-hover:bg-brand-blue group-hover:text-white transition-colors">10%</div>
+                                    <div class="text-left">
+                                        <h4 className="font-bold text-brand-dark text-lg">Inicio de Obra</h4>
+                                        <p class="text-sm text-gray-500">Comienzo de construcción</p>
+                                    </div>
+                                </div>
+                                <div class="font-heading font-bold text-2xl text-gray-800">
+                                    42.500,00 € <span class="text-sm text-gray-400 font-normal">+ 10% IVA</span>
+                                </div>
+                            </div>
+
+                            <!-- Resumen Intermedio -->
+                            <div class="my-8 relative">
+                                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                                    <div class="w-full border-t border-gray-200"></div>
+                                </div>
+                                <div class="relative flex justify-center">
+                                    <span class="bg-white px-4 text-sm text-gray-400 uppercase tracking-wider font-semibold">Resumen Pagos Previos</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-brand-blue/5 border border-brand-blue/20 rounded-2xl p-6 md:p-8 text-center relative">
+                                <div class="relative z-10">
+                                    <div class="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4 mb-2">
+                                        <i class="fa-solid fa-piggy-bank text-brand-blue text-xl"></i>
+                                        <p class="text-brand-blue font-bold uppercase text-sm tracking-widest">
+                                            Total aportado durante la obra (40%)
+                                        </p>
+                                    </div>
+                                    <p class="font-heading font-extrabold text-3xl md:text-5xl text-brand-dark mb-2">
+                                        170.000,00 € <span class="text-lg md:text-2xl text-gray-500 font-normal">+ 10% IVA</span>
+                                    </p>
+                                    <p class="text-sm text-gray-500 max-w-lg mx-auto">
+                                        Capital propio necesario antes de entrega de llaves.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Entrega -->
+                            <div class="mt-8 flex flex-col md:flex-row justify-between items-center p-6 md:p-8 rounded-2xl bg-gray-900 text-white shadow-lg border border-gray-800 transform hover:scale-[1.01] transition-transform duration-300">
+                                <div class="flex items-center gap-5 w-full md:w-auto mb-4 md:mb-0">
+                                    <div class="w-14 h-14 rounded-full bg-brand-blue text-white flex items-center justify-center font-bold text-xl shadow-lg shadow-blue-900/50">60%</div>
+                                    <div class="text-left">
+                                        <h4 class="font-heading font-bold text-white text-xl md:text-2xl">Entrega de Llaves</h4>
+                                        <p class="text-blue-200 text-sm md:text-base">Hipoteca o fondos propios</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-heading font-extrabold text-3xl md:text-4xl text-brand-blue leading-none">
+                                        255.000,00 €
+                                    </div>
+                                    <span class="text-sm text-gray-400 font-normal">+ 10% IVA</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-xs text-gray-400 max-w-2xl mx-auto">
+                        * Cantidades entregadas a cuenta garantizadas mediante aval bancario o póliza de seguros según ley vigente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULARIO FINAL -->
+    <section id="contacto" class="py-24 relative bg-gray-100">
+        <!-- CAMBIAR IMAGEN: Interior acogedor, salón con chimenea o similar -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Interior hogar" class="w-full h-full object-cover opacity-10">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                
+                <!-- Left Side Form -->
+                <div class="md:w-5/12 bg-brand-blue p-10 text-white flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-heading font-bold text-3xl mb-6">¿Te imaginas viviendo aquí?</h2>
+                        <p class="text-blue-100 mb-8 leading-relaxed">
+                            Las unidades de Fuentes Claras III están volando. No te quedes sin conocer el proyecto que cambiará tu vida.
+                        </p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 opacity-90">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span class="font-semibold">Dossier completo en PDF</span>
+                        </div>
+                        <div class="flex items-center gap-3 opacity-90">
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            <span class="font-semibold">Planos cotados</span>
+                        </div>
+                        <div class="flex items-center gap-3 opacity-90">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span class="font-semibold">Memoria de calidades</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side Inputs -->
+                <div class="md:w-7/12 p-10">
+                    <form action="#" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-gray-700 mb-2">Nombre completo</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-blue-200 transition-all outline-none" placeholder="Ej. Juan Pérez">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-gray-700 mb-2">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-blue-200 transition-all outline-none" placeholder="Ej. juan@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-bold text-gray-700 mb-2">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-blue focus:ring-2 focus:ring-blue-200 transition-all outline-none" placeholder="Ej. 600 000 000">
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" id="interest" name="interest" class="w-5 h-5 text-brand-blue rounded border-gray-300 focus:ring-brand-blue cursor-pointer">
+                            <label for="interest" class="text-sm text-gray-600 cursor-pointer">
+                                Me interesa recibir información sobre financiación personalizada.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-blue text-white font-bold py-4 rounded-lg hover:bg-blue-700 transition-all shadow-lg flex items-center justify-center gap-2 group">
+                            SOLICITAR DOSSIER
+                            <i class="fa-solid fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        
+                        <p class="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-lock"></i> Tus datos están seguros. No enviamos spam.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <!-- CAMBIAR IMAGEN: Logo Blanco -->
+            <div class="flex-shrink-0">
+               <img src="https://via.placeholder.com/200x60/transparent/FFFFFF?text=ACTIVA+360" alt="ACTIVA 360 Logo" class="h-10 w-auto object-contain brightness-0 invert opacity-90">
+            </div>
+            
+            <div class="text-sm text-gray-400 text-center md:text-right">
+                <p>&copy; 2024 Activa Inmobiliaria 360. Todos los derechos reservados.</p>
+                <p class="mt-2">Promoción Fuentes Claras III - Cubas de la Sagra</p>
+                <div class="mt-4 space-x-4">
+                    <a href="#" class="hover:text-white transition-colors">Aviso Legal</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- NAVBAR SCROLL SCRIPT -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const navLink = document.getElementById('nav-link');
+            const navLogo = document.getElementById('nav-logo');
+            
+            if (window.scrollY > 20) {
+                navbar.classList.remove('bg-transparent', 'py-5');
+                navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+                navLink.classList.remove('text-white/90');
+                navLink.classList.add('text-gray-600');
+                // En un escenario real, aquí cambiarías el src del logo a la versión oscura
+                // navLogo.src = 'ruta-logo-oscuro.png';
+            } else {
+                navbar.classList.add('bg-transparent', 'py-5');
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+                navLink.classList.add('text-white/90');
+                navLink.classList.remove('text-gray-600');
+                // navLogo.src = 'ruta-logo-blanco.png';
+            }
+        });
+    </script>
+</body>
+</html>
